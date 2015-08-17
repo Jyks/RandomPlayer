@@ -160,7 +160,6 @@ public class RandomPlayer {
 		if(!loadWavs(soundDir, recursive)) return;
 		System.out.println(wavFiles.size() + " files loaded!");
 		
-		// Is the folder empty?
 		if(wavFiles.isEmpty()) {
 			System.err.println("Given folder " + soundDir + " is empty!");
 			return;
@@ -177,7 +176,7 @@ public class RandomPlayer {
 			Thread.sleep((interval + (randomization<1? 0 : random.nextInt(randomization))) * 1000L);
 			
 			if(order) {
-				// Set next file index
+				// Set file index to next
 				if(index < wavFiles.size()-1) index++;
 				else index = 0;
 			} else {
